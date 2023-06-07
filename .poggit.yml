@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/mathchat900/EconomyAPI-PM5
+build-by-default: true
+branches:
+- main
+projects:
+  EconomyAPI-PM5:
+    path: ""
+...
