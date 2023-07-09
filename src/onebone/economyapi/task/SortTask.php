@@ -35,15 +35,14 @@ class SortTask extends AsyncTask
 
     /**
      * @param string $player
+     * @param string $moneyData
      * @param bool $addOp
      * @param int $page
-     * @param array $ops
-     * @param array $banList
+     * @param string $ops
+     * @param string $banList
      */
-    //public function __construct(private string $sender,  private array $addOp, private int $page, private array $ops, private array $banList) {}
+    public function __construct(private string $sender, private string $moneyData, private bool $addOp, private int $page, private string $ops, private string $banList) {}
 
-        //j'ai pas d'idée comment régler le problème. à compléter si vous avez.
-        //I have no idea how to fix the problem. to complete if you have.
     public function onRun(): void
     {
         $this->topList = serialize((array)$this->getTopList());
@@ -51,9 +50,9 @@ class SortTask extends AsyncTask
 
     private function getTopList()
     {
-        $money = (array)$this->moneyData;
-        $banList = (array)$this->banList;
-        $ops = (array)$this->ops;
+        $money = (array)unserialize($this->moneyData);
+        $banList = (array)unserialize($this->banList);
+        $ops = (array)unserialize($this->ops);
         arsort($money);
 
         $ret = [];

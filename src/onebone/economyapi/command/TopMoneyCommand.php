@@ -61,7 +61,7 @@ class TopMoneyCommand extends Command
             }
         }
 
-        $task = new SortTask($sender->getName(), $this->plugin->getAllMoney(), $this->plugin->getConfig()->get("add-op-at-rank"), $page, $ops, $banned);
+        $task = new SortTask($sender->getName(), serialize($this->plugin->getAllMoney()), $this->plugin->getConfig()->get("add-op-at-rank"), $page, serialize($ops), serialize($banned));
         $server->getAsyncPool()->submitTask($task);
         return true;
     }
