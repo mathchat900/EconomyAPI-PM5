@@ -1,4 +1,4 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/mathchat900/EconomyAPI-PM5
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/BlackD14/EconomyAPI-PM5
 build-by-default: true
 branches:
 - main
